@@ -1,4 +1,3 @@
-// components/TodoList.tsx
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -8,7 +7,7 @@ import { todoService } from '@/services/todoService';
 import type { Todo } from '@/types/todo';
 import TodoItem from './TodoItem';
 
-const TodoList: React.FC = () => {
+const TodoList: React.FC = () =>{
   const { user } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
