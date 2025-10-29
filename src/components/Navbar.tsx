@@ -1,11 +1,11 @@
-// src/components/Navbar.tsx
+// components/Navbar.tsx
 'use client';
 
-import { signOut, useSession } from 'next-auth/react';
+import { useAuth } from '@/contexts/AuthContext';
 import Link from 'next/link';
 
 export default function Navbar() {
-  const { data: session } = useSession();
+  const { user, signOut } = useAuth();
 
   return (
     <nav className="bg-blue-600 text-white shadow-lg">
@@ -14,11 +14,11 @@ export default function Navbar() {
           Todo App
         </Link>
         <div className="flex items-center gap-4">
-          {session ? (
+          {user ? (
             <>
-              <span className="text-sm">{session.user?.email}</span>
+              <span className="text-sm">{user.email}</span>
               <button
-                onClick={() => signOut({ callbackUrl: '/login' })}
+                onClick={signOut}
                 className="bg-red-500 px-4 py-2 rounded hover:bg-red-600 font-medium transition-colors"
               >
                 Logout

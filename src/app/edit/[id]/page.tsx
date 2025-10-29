@@ -1,13 +1,13 @@
-// app/page.tsx
 'use client';
 
-import { useEffect } from 'react';
+import { use, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
-import TodoList from '@/components/TodoList';
+import TodoForm from '@/components/TodoForm';
 import Navbar from '@/components/Navbar';
 
-export default function HomePage() {
+export default function EditPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const { user, loading } = useAuth();
   const router = useRouter();
 
@@ -33,7 +33,7 @@ export default function HomePage() {
     <>
       <Navbar />
       <div className="min-h-screen py-8">
-        <TodoList />
+        <TodoForm todoId={id} isEdit={true} />
       </div>
     </>
   );

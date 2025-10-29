@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Todos collection
+    match /todos/{todoId} {
+      // Allow users to read their own todos
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+
+      // Allow create if the user is authenticated and owns the todo
+      allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;
+
+      // Allow update/delete only by the todo’s owner
+      allow update, delete: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+  }
+}

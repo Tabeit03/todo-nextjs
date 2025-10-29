@@ -1,16 +1,12 @@
+// app/layout.tsx
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import AuthProvider from '@/components/AuthProvider';
+import { AuthProvider } from '@/contexts/AuthContext';
 import Navbar from '@/components/Navbar';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import QueryProvider from '@/components/QueryProvider';
-
-const inter = Inter({ subsets: ['latin'] });
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Todo App',
-  description: 'A simple todo app with authentication',
+  title: 'Todo List',
+  description: 'A simple todo list app with Firebase',
 };
 
 export default function RootLayout({
@@ -20,12 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <AuthProvider>
-          <QueryProvider>
-            <Navbar />
-            <main className="min-h-screen py-8">{children}</main>
-          </QueryProvider>
+          
+          <div className="min-h-screen">
+            {children}
+          </div>
         </AuthProvider>
       </body>
     </html>
