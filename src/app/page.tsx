@@ -1,4 +1,3 @@
-// app/page.tsx
 'use client';
 
 import { useAuth } from '@/contexts/AuthContext';
@@ -17,14 +16,15 @@ export default function HomePage() {
     );
   }
 
-  // NOT LOGGED IN - Show welcome page with buttons
   if (!user) {
     return (
+      <>
+        <Navbar />
       <div className="min-h-screen flex items-center justify-center bg-[#d1d186]">
         <div className="text-center p-8 bg-white rounded-lg shadow-md max-w-md mx-4">
           <h1 className="text-4xl font-bold mb-4 text-gray-800">Welcome to Todo App</h1>
           <p className="text-gray-600 mb-6">
-            Manage your tasks efficiently with our simple and elegant todo application.
+            Manage your tasks efficiently with our simple and elegant todo application. <br /> Login or create an account to get started.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -42,10 +42,10 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
-  // LOGGED IN - Show TodoList
   return (
     <>
       <Navbar />
