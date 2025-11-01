@@ -7,6 +7,6 @@ body {
 }
 
 *:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #d8d9db;
   outline-offset: 2px;
 }

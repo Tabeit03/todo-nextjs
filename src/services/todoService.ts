@@ -10,7 +10,7 @@ import {
   orderBy,
   onSnapshot,
   Unsubscribe,
-  serverTimestamp, // ✅ import this
+  serverTimestamp, 
 } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import type { Todo, TodoFormData } from '@/types/todo';
@@ -52,7 +52,7 @@ class TodoService {
       todo: formData.todo,
       completed: false,
       userId,
-      createdAt: serverTimestamp(), // ✅ use Firestore server timestamp
+      createdAt: serverTimestamp(), 
     });
     return docRef.id;
   }

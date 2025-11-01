@@ -65,7 +65,7 @@ const TodoForm: React.FC<Props> = ({ todoId, isEdit = false }) => {
   }
 
   return (
-    <div className="max-w-md mx-auto p-4 sm:p-6 bg-[#e7ecf6] rounded-lg shadow-md mt-8">
+    <div className="max-w-md mx-auto p-4 sm:p-6 bg-[#7d7d34b6] rounded-lg shadow-md mt-8">
       <h2 className="text-2xl font-bold mb-6 text-center">
         {isEdit ? 'Edit Todo' : 'Add New Todo'}
       </h2>
@@ -73,7 +73,7 @@ const TodoForm: React.FC<Props> = ({ todoId, isEdit = false }) => {
         <div>
           <label
             htmlFor="todo-input"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-medium text-gray-300 mb-1"
           >
             Todo Title
           </label>
@@ -85,7 +85,7 @@ const TodoForm: React.FC<Props> = ({ todoId, isEdit = false }) => {
             onChange={(e) => setFormData({ ...formData, todo: e.target.value })}
             required
             disabled={loading}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent disabled:opacity-50"
             aria-required="true"
           />
         </div>
@@ -93,7 +93,7 @@ const TodoForm: React.FC<Props> = ({ todoId, isEdit = false }) => {
           <button
             type="submit"
             disabled={loading || !formData.todo?.trim()}
-            className="flex-1 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+            className="flex-1 bg-[#0a80e1] text-white py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
           >
             {loading ? 'Saving...' : isEdit ? 'Update Todo' : 'Add Todo'}
           </button>

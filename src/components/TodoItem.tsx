@@ -46,7 +46,7 @@ const TodoItem: React.FC<Props> = ({ todo, onToggle, onEdit, onDelete, isUpdatin
     >
       <Link
         href={`/edit/${todo.id}`}
-        className="flex-1 cursor-pointer hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 p-2 rounded"
+        className="flex-1 cursor-pointer hover:underline focus:outline-none focus:ring-2 focus:ring-red-300 p-2 rounded"
         aria-label={`Edit ${todo.todo}`}
       >
         <span className={todo.completed ? 'line-through text-gray-500' : 'text-gray-900'}>

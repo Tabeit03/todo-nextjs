@@ -47,7 +47,7 @@ export default function RegisterPage() {
     <>
       <Navbar/>
       <div className="min-h-screen flex items-center justify-center bg-[#d1d186]">
-        <div className="max-w-md w-full p-8 bg-white rounded-lg shadow-md">
+        <div className="max-w-md w-full p-8 bg-[#7b7b12b6] rounded-lg shadow-md">
           <h1 className="text-3xl font-bold mb-6 text-center">Register</h1>
           
           {error && (
@@ -138,15 +138,15 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+              className="w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
             >
               {loading ? 'Creating account...' : 'Register'}
             </button>
           </form>
 
-          <p className="mt-4 text-center text-sm text-gray-600">
+          <p className="mt-4 text-center text-sm text-gray-700">
             Already have an account?{' '}
-            <Link href="/login" className="text-blue-500 hover:text-blue-600 font-medium">
+            <Link href="/login" className="text-gray-50 hover:text-gray-200 font-medium">
               Login
             </Link>
           </p>

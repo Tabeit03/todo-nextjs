@@ -35,7 +35,7 @@ export default function LoginPage() {
     <> 
       <Navbar/>
       <div className="min-h-screen flex items-center justify-center bg-[#d1d186]">
-        <div className="max-w-md w-full p-8 bg-white rounded-lg shadow-md">
+        <div className="max-w-md w-full p-8 bg-[#7b7b12b6] rounded-lg shadow-md">
           <h1 className="text-3xl font-bold mb-6 text-center">Login</h1>
           
           {error && (
@@ -94,15 +94,15 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+              className="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
             >
               {loading ? 'Logging in...' : 'Login'}
             </button>
           </form>
 
-          <p className="mt-4 text-center text-sm text-gray-600">
+          <p className="mt-4 text-center text-sm text-gray-800">
             Don't have an account?{' '}
-            <Link href="/register" className="text-blue-500 hover:text-blue-600 font-medium">
+            <Link href="/register" className="text-gray-50 hover:text-gray-200 font-bold underline">
               Register
             </Link>
           </p>
